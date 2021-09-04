@@ -22,7 +22,7 @@ class TkinterCustomButton(tkinter.Frame):
                     image= PIL.PhotoImage, standard is None"""
 
     def __init__(self,
-                 bg_color=None,
+                 bg_color=None,master=None,
                  fg_color="#2874A6",
                  hover_color="#5499C7",
                  border_color=None,
@@ -37,7 +37,8 @@ class TkinterCustomButton(tkinter.Frame):
                  hover=True,
                  image=None,
                  *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        #super().__init__(*args, **kwargs)
+        tkinter.Frame.__init__(self, master)
 
         if bg_color is None:
             self.bg_color = self.master.cget("bg")
